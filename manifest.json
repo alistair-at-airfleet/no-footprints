@@ -1,13 +1,13 @@
 {
     "manifest_version": 3,
-    "name": "No footprints",
+    "name": "Mute marketing signals",
     "version": "1.1",
     "permissions": ["activeTab", "scripting", "storage"],
     "content_scripts": [
       {
-        "matches": ["https://*.augury.com/*"],
-        "js": ["footprint.js"],
-        "run_at": "document_idle"
+        "matches": ["https://*.rsaweb.co.za/*"],
+        "js": ["mute-marketing.js"],
+        "run_at": "document_start"
       }
     ],
     "action": {
