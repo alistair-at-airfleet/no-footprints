@@ -1,17 +1,24 @@
 {
-    "manifest_version": 3,
-    "name": "Mute marketing signals",
-    "version": "1.1",
-    "permissions": ["activeTab", "scripting", "storage"],
-    "content_scripts": [
-      {
-        "matches": ["https://*.rsaweb.co.za/*"],
-        "js": ["mute-marketing.js"],
-        "run_at": "document_start"
-      }
-    ],
-    "action": {
-      "default_icon": "icon.png",
-      "default_popup": "popup.html"
+  "manifest_version": 3,
+  "name": "Mute marketing signals",
+  "version": "1.0",
+  "permissions": ["storage"],
+  "host_permissions": ["https://*.rsaweb.co.za/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://*.rsaweb.co.za/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
     }
-  }  
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["page.js"],
+      "matches": ["https://*.rsaweb.co.za/*"]
+    }
+  ],
+  "action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  }
+}
